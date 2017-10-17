@@ -6,7 +6,7 @@
  * Time: 09:23
  */
 
-function getVejrJson()
+function getVejr($location)
 {
 
 
@@ -14,8 +14,8 @@ function getVejrJson()
     $ch = curl_init();
 
     // Set cURL options
-//        curl_setopt($ch, CURLOPT_URL, 'http://vejr.eu/api.php?location=' . $location . '&degree=C');
-    curl_setopt($ch, CURLOPT_URL, 'http://vejr.eu/api.php?location=Roskilde&degree=C');
+        curl_setopt($ch, CURLOPT_URL, 'http://vejr.eu/api.php?location=' . $location . '&degree=C');
+//    curl_setopt($ch, CURLOPT_URL, 'http://vejr.eu/api.php?location=Roskilde&degree=C');
     curl_setopt($ch, CURLOPT_USERAGENT, 'apivejr');
 
     // Parse result
@@ -31,6 +31,6 @@ function getVejrJson()
 }
 
 // Test CVRAPI
-print_r(getVejrJson('Roskilde'));
-print_r(getVejrJson());
+print_r(getVejr('Vordingborg'));
+//print_r(cvrapi());
 ?>
